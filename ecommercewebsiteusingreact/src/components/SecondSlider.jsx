@@ -10,10 +10,7 @@ import { Box,Image } from "@chakra-ui/react";
  
     return (
       <Box >
-     
-            <Image src={img} alt="error"/>
- 
-
+     <Image src={img} alt="error"/>
       </Box>
     );
   }

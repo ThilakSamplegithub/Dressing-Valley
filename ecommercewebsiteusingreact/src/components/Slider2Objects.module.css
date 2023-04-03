@@ -1,9 +1,10 @@
 .responsiveness{
     /* background-color: white; */
     /* border:1px solid red; */
-    /* margin:0 auto; */
-    /* width:90%; */
-    overflow: hidden;
+    margin:auto;
+    width:80%;
+    /* margin-top:60px */
+    /* overflow: hidden; */
 }
 /* .slick-prev{
     color:black;

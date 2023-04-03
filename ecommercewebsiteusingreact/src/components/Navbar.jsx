@@ -16,6 +16,7 @@ import {
     useDisclosure,
     SimpleGrid,Grid,Image
   } from '@chakra-ui/react';
+  import {Link as RouterLink} from "react-router-dom"
   import styles from "./Navbar.module.css"
   import  logo from '../Images/Logo.png'
   import {
@@ -24,10 +25,11 @@ import {
     ChevronDownIcon,
     ChevronRightIcon,
   } from '@chakra-ui/icons';
-  
+import { useContext } from 'react';
+  import {ObjContext} from "../Context/ContextApi"
   export default function Navbar() {
     const { isOpen, onToggle } = useDisclosure();
-  
+     const{isAuth,logout}=useContext(ObjContext)
     return (
       <Box>
         <Flex
@@ -58,7 +60,7 @@ import {
               textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
               fontFamily={'heading'}
               color={useColorModeValue('gray.800', 'white')}>
-              <Box ><Image w='70px' src={logo} alt='err'/></Box>
+              <RouterLink to="/"><Box w='100px' borderRadius="100%" ><Image w='70px' src={logo} alt='err'/></Box></RouterLink>
             </Text>
   
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -77,9 +79,9 @@ import {
               fontWeight={400}
               variant={'link'}
               href={'#'}>
-              Sign In
+             
             </Button>
-            <Button
+           {!isAuth?<RouterLink to="/login"><Button
               as={'a'}
               display={{ base: 'none', md: 'inline-flex' }}
               fontSize={'sm'}
@@ -92,6 +94,7 @@ import {
               }}>
               Sign Up
             </Button>
+            </RouterLink>:<Button onClick={()=>logout()}>Logout</Button>}
           </Stack>
         </Flex>
   
@@ -331,7 +334,7 @@ import {
           },
           {
             label: 'Sale & Clearance',
-            subLabel: ['Shop All',"Jeans & Denim:25% Off"],
+            subLabel: [<RouterLink to="/products">Shop All</RouterLink>,"Jeans & Denim:25% Off"],
             href: '#',
           },
           {
