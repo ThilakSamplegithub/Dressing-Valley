@@ -259,7 +259,7 @@ import { useContext } from 'react';
       children: [
         {
           label: 'Friends and Family:25% offer',
-          subLabel: ["Shop All","AQUA",'MOTHER','rag & bone','Theory'],
+          subLabel: [<RouterLink to="/products">Shop All-click here</RouterLink>,"AQUA",'MOTHER','rag & bone','Theory'],
           href: '#',
         },
         {
@@ -279,7 +279,7 @@ import { useContext } from 'react';
         children: [
           {
             label: 'Friends and Family:25% offer',
-            subLabel: ['Shop All',"Badgley Mischka","Loeffler Randall","Select Stuart Weitzman",'Vince'],
+            subLabel: ["Shop All","Badgley Mischka","Loeffler Randall","Select Stuart Weitzman",'Vince'],
             href: '#',
           },
           {
